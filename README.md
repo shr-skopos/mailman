@@ -62,6 +62,8 @@ mailman/
 
 - [express](https://www.npmjs.com/package/express/)
 
+- [npm install sweetalert2](https://sweetalert2.github.io/)
+
 # 
 
 That's it! You should now be able to use Mailman to send emails locally.
@@ -70,6 +72,8 @@ That's it! You should now be able to use Mailman to send emails locally.
 ![Alt-Text](./publich/images/readme.webp)
 
 
+# Credits
 
+This project was created by [Saied Hr.].
 
 
