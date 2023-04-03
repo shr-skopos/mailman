@@ -67,7 +67,7 @@ mailman/
 That's it! You should now be able to use Mailman to send emails locally.
 
 
-![Alt-Text](https://res.cloudinary.com/practicaldev/image/fetch/s--67HezzSk--/c_imagga_scale,f_auto,fl_progressive,h_900,q_66,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c03rjpxrkj8yo87pbn3d.gif)
+![Alt-Text](./publich/images/readme.webp)
 
 
 
