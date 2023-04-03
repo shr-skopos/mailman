@@ -49,7 +49,7 @@ mailman/
 - SERVER_PORT (optional): the port number for the server. If not set, the server will use port 3000.
 - SMTP_PORT (optional): the SMTP port number for your email provider. If not set, the server will use port 587 or 443 or 465 or 25.
 
-5- Start the server using the command: npm server.js.
+5- Start the server using the command: npm server.js or node start.
 
 6- Open a web browser and go to http://localhost:3000.
 
