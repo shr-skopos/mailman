@@ -33,7 +33,7 @@ APP.post('/send-email', async (req, res) => {
         // Konfiguriere die E-Mail-Optionen
         const mailOptions = {
             from:  process.env.MAIL_FROM,
-            to: process.env.MAIL_TO,
+            to: process.env.COMMA_SEPARATED_LIST_OF_EMAILS.slice(","),
             subject: 'Ein Beispielprojekt, das Mailmann von Saied Hr :)',
             html: emailContent,
         };
