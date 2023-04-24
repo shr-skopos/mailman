@@ -1,7 +1,7 @@
 mailman/
 ├── config/
 │   └── config.env
-├── publich/
+├── public/
 │   ├── email_template.html
 │   ├── email_template.js
 │   ├── style.css
