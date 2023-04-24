@@ -1,8 +1,10 @@
 // Hier können Sie den Swal-Code verwenden, um benutzerdefinierte Benachrichtigungen zu erstellen
 window.addEventListener("load", function () {
   const contentPlaceholder = document.getElementById("content-placeholder");
-  const sendEmailButton = document.getElementById("send-email-button");
+  const sendEmailButton    = document.getElementById("send-email-button");
+
   let html;
+  
   // Lade den Inhalt der email_template.html Datei
   fetch("email_template.html")
     .then((response) => response.text())
@@ -27,10 +29,7 @@ window.addEventListener("load", function () {
             confirmButtonText: "OK",
           });
         } else if (response.status == 500) {
-          console.error(
-            "Fehler beim Senden der E-Mail, Status:",
-            response.status
-          );
+          console.error("Fehler beim Senden der E-Mail, Status:",response.status);
           Swal.fire({
             title: `Fehler beim Senden der E-Mail. Status: 500`,
             text: "Bitte versuchen Sie es später erneut.",
