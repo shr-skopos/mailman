@@ -9,21 +9,26 @@ dotenv.config({ path: './config/config.env' });
 const APP = express();
 const IP = "127.0.0.1";
 const PORT = process.env.SERVER_PORT || 3000;
-const smtpPort = process.env.SMTP_PORT || 443 || 465 || 25;
+const SMTP_PORT = process.env.SMTP_PORT || 443 || 465 || 25;
 
 // Verzeichnis für statische Dateien
-APP.use(express.static('publich'));
+APP.use(express.static('public'));
 
 // Endpunkt zum Senden der E-Mail
 APP.post('/send-email', async (req, res) => {
     try {
         // Lade den Inhalt der email_template.html-Datei
-        const emailContent = await fs.readFile('publich/email_template.html', 'utf8');
+        const emailContent = await fs.readFile('public/email_template.html', 'utf8');
         
         // Konfiguration für den Mail-Transport
         const transporter = nodemailer.createTransport({
+<<<<<<< HEAD
             service: process.env.SMTP_HOST,
             port:smtpPort,
+=======
+            service: process.env.SMTP_HOST || 'gmail',
+            port: SMTP_PORT,
+>>>>>>> 2742fa3edd765328248093bc0cfe9b276c9c199c
             auth: {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS,

@@ -2,7 +2,7 @@
 - Mailman is a local development tool that makes it easy to make changes to HTML files and send the content to multiple users simultaneously, making it a useful tool for team collaboration.
 
 # Structure:
-publich/ - directory containing the public files of the application, including the HTML email template and the CSS styles
+public/ - directory containing the public files of the application, including the HTML email template and the CSS styles
 
 config/ - directory containing the configuration files for the application
 
@@ -16,7 +16,7 @@ server.js - main server file for the application, contains the server setup and 
 mailman/
 ├── config/
 │   └── config.env
-├── publich/
+├── public/
 │   ├── email_template.html
 │   ├── email_template.js
 │   ├── style.css
@@ -69,7 +69,7 @@ mailman/
 That's it! You should now be able to use Mailman to send emails locally.
 
 
-![Alt-Text](./publich/images/readme.webp)
+![Alt-Text](./public/images/readme.webp)
 
 
 # Credits
