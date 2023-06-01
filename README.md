@@ -40,7 +40,7 @@ mailman/
 
 3- Install the required dependencies using the command: npm install.
 
-4- Create a .env file in the root directory of the project and set the following environment variables:
+4- Create a .env file in the config folder and set the following environment variables:
 - SMTP_HOST: the SMTP host of your email provider.
 - SMTP_USER: the email address used to send emails.
 - SMTP_PASS: the password for the email address used to send emails.
