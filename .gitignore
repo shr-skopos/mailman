@@ -3,6 +3,8 @@
 
 # Environment variables
 /config/config.env
+.env
+
 
 # IDE files
 .vscode/
