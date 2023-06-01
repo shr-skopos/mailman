@@ -41,7 +41,11 @@ mailman/
 
 3. Install the required dependencies using the command: `npm install`.
 
-4. Start the MailHog server to act as the local mail server. You can download and run MailHog by following the instructions in the [MailHog GitHub repository](https://github.com/mailhog/MailHog) OR (https://www.npmjs.com/package/mailhog).
+4. Start the MailHog server to act as the local mail server. You have two options to install MailHog:
+
+  - Manually install MailHog by following the instructions in the [MailHog GitHub repository](https://github.com/mailhog/MailHog) OR (https://www.npmjs.com/package/mailhog).
+   
+   - Alternatively, you can install MailHog using npm by running the command: `npm install -g mailhog`. Once installed, you can start MailHog by running the command: `MailHog`.
 
 5. Create a `.env` file in the `config` folder and set the following environment variables:
    - `SMTP_HOST`: the SMTP host of your local MailHog server (e.g., `localhost`).
@@ -51,7 +55,7 @@ mailman/
    - `MAIL_SUBJECT`: the subject of the email.
    - `SERVER_PORT` (optional): the port number for the server. If not set, the server will use port 3000.
 
-6. Start the server using the command: `npm start` or `node server.js`.
+6. Start the server using the command: `npm run start` or `node server.js`.
 
 7. Open a web browser and go to `http://localhost:3000`.
 
@@ -65,6 +69,10 @@ mailman/
 - [MailHog](https://github.com/mailhog/MailHog)
 
 That's it! You should now be able to use Mailman to send emails locally using the MailHog server to intercept and display the emails.
+
+
+
+![Alt-Text](./public/images/readme.webp)
 
 # Credits
 
