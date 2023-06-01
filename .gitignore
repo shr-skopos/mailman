@@ -4,6 +4,7 @@
 # Environment variables
 /config/config.env
 .env
+*.env
 
 
 # IDE files
