@@ -21,7 +21,6 @@ window.addEventListener("load", function () {
     })
       .then((response) => {
         if (response.ok) {
-          console.log("E-Mail wurde erfolgreich gesendet");
           Swal.fire({
             title: "Erfolgreich !",
             text: "E-Mail wurde erfolgreich gesendet.",
@@ -29,9 +28,8 @@ window.addEventListener("load", function () {
             confirmButtonText: "OK",
           });
         } else {
-          console.error("Fehler beim Senden der E-Mail, Status:",response.status);
           Swal.fire({
-            title: `Fehler beim Senden der E-Mail. Status: 500`,
+            title: "Fehler beim Senden der E-Mail. Status:" + response.status,
             text: "Bitte versuchen Sie es später erneut.",
             icon: "error",
           });
