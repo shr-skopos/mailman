@@ -28,7 +28,7 @@ window.addEventListener("load", function () {
             icon: "success",
             confirmButtonText: "OK",
           });
-        } else if (response.status == 500) {
+        } else {
           console.error("Fehler beim Senden der E-Mail, Status:",response.status);
           Swal.fire({
             title: `Fehler beim Senden der E-Mail. Status: 500`,
