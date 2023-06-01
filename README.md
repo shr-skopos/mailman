@@ -51,7 +51,8 @@ mailman/
    - `SMTP_HOST`: the SMTP host of your local MailHog server (e.g., `localhost`).
    - `SMTP_PORT`: the SMTP port number of your local MailHog server (e.g., `1025`).
    - `MAIL_FROM`: the email address that the email will be sent from.
-   - `COMMA_SEPARATED_LIST_OF_EMAILS`: a comma-separated list of email addresses that the email will be sent to.
+   - `MAIL_TO`: a comma-separated list of email addresses that the email will be sent to.
+   - `MAIL_CC`: a comma-separated list of email addresses that will be included in the CC field of the email.
    - `MAIL_SUBJECT`: the subject of the email.
    - `SERVER_PORT` (optional): the port number for the server. If not set, the server will use port 3000.
 
