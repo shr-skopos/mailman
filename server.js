@@ -22,7 +22,7 @@ APP.post('/send-email', async (req, res) => {
         
         // Konfiguration für den Mail-Transport
         const transporter = nodemailer.createTransport({
-            service: process.env.SMTP_HOST || 'gmail',
+            service: process.env.SMTP_HOST,
             port:smtpPort,
             auth: {
                 user: process.env.SMTP_USER,
