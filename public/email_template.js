@@ -35,14 +35,7 @@ window.addEventListener("load", function () {
             text: "Bitte versuchen Sie es später erneut.",
             icon: "error",
           });
-        } else {
-          console.error("Fehler beim Senden der E-Mail:", response.statusText);
-          Swal.fire({
-            title: `Fehler beim Senden der E-Mail.`,
-            text: "Bitte versuchen Sie es später erneut.",
-            icon: "error",
-          });
-        }
+        } 
       })
       .catch((error) => console.error("Fehler beim Senden der E-Mail:", error));
   });

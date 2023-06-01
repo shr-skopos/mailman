@@ -22,13 +22,8 @@ APP.post('/send-email', async (req, res) => {
         
         // Konfiguration für den Mail-Transport
         const transporter = nodemailer.createTransport({
-<<<<<<< HEAD
             service: process.env.SMTP_HOST,
             port:smtpPort,
-=======
-            service: process.env.SMTP_HOST || 'gmail',
-            port: SMTP_PORT,
->>>>>>> 2742fa3edd765328248093bc0cfe9b276c9c199c
             auth: {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS,
