@@ -12,8 +12,11 @@ package.json - file containing the project dependencies and scripts
 
 server.js - main server file for the application, contains the server setup and routing logic
 
+#
+
 ``` 
 mailman/
+│
 ├── config/
 │ └── config.env
 ├── public/
@@ -23,8 +26,10 @@ mailman/
 │ └── index.html
 ├── node_modules/
 │ ├── dotenv-extended/
+│ ├── express/
+│ ├── mailhog/
 │ ├── nodemailer/
-│ └── express/
+│ └── sweetalert2/
 ├── server.js
 ├── package-lock.json
 └── package.json
