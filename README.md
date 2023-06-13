@@ -74,9 +74,11 @@ mailman/
 
 7. Start the server using the command: `npm run start` or `node server.js`.
 
-8. Open a web browser and go to http://localhost:3000.
+8.  To start MailHog, enter these commands in your terminal: `~/go/bin/MailHog`
 
-9. Click on the "Send Email" button to send an email. The email will be intercepted and displayed by the MailHog server.
+9. Open a web browser and go to http://localhost:3000.
+
+10. Click on the "Send Email" button to send an email. The email will be intercepted and displayed by the MailHog server.
 
 ## Dependencies
 
