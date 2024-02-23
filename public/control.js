@@ -3,13 +3,16 @@ const contentQualtricsPlaceholder = document.getElementById("content-qualtrics-p
 const sendEmailButton = document.getElementById("send-email-button");
 const cleverreach = document.getElementById("cleverreach");
 const qualtrics = document.getElementById("qualtrics");
+const h1 = document.getElementById("h1");
 
 const getCleverReachTemplate = () => {
     fetch("cleverreach_template/cleverreach_template.html")
         .then((response) => response.text())
         .then((data) => {
+            h1.innerHTML = "CleverReach";
             contentCleverReachPlaceholder.innerHTML = data;
-            sendEmailButton.setAttribute("data-template", "cleverreach"); // Setzen Sie den Wert für das Datenattribut
+            contentQualtricsPlaceholder.innerHTML = '';
+            sendEmailButton.setAttribute("data-template", "cleverreach");
         })
         .catch((error) => console.error(error));
 };
@@ -19,7 +22,9 @@ const getQualtricsTemplate = () => {
         .then((response) => response.text())
         .then((data) => {
             contentQualtricsPlaceholder.innerHTML = data;
-            sendEmailButton.setAttribute("data-template", "qualtrics"); // Setzen Sie den Wert für das Datenattribut
+            contentCleverReachPlaceholder.innerHTML = '';
+            sendEmailButton.setAttribute("data-template", "qualtrics");
+            h1.innerHTML = "Qualtrics";
         })
         .catch((error) => console.error(error));
 };
@@ -33,9 +38,9 @@ qualtrics.onclick = () => {
 };
 
 sendEmailButton.addEventListener("click", (e) => {
-    const template = sendEmailButton.getAttribute("data-template"); // Abrufen des Werts des Datenattributs
+    const template = sendEmailButton.getAttribute("data-template");
     if (!template) {
-        console.error("Template nicht ausgewählt");
+        console.error("Template not selected");
         return;
     }
 
@@ -49,20 +54,20 @@ sendEmailButton.addEventListener("click", (e) => {
     .then((response) => {
         if (response.ok) {
             Swal.fire({
-                title: "Erfolgreich!",
-                text: "E-Mail wurde erfolgreich gesendet.",
+                title: "Success!",
+                text: "Email sent successfully.",
                 icon: "success",
                 confirmButtonText: "OK",
             });
         } else {
             Swal.fire({
-                title: "Fehler beim Senden der E-Mail. Status: " + response.status,
-                text: "Bitte versuchen Sie es später erneut.",
+                title: "Error sending email. Status: " + response.status,
+                text: "Please try again later.",
                 icon: "error",
             });
         }
     })
     .catch((error) => {
-        console.error("Fehler beim Senden der E-Mail:", error);
+        console.error("Error sending email:", error);
     });
 });
