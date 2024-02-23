@@ -74,7 +74,7 @@ mailman/
 
 7. Start the server using the command: `npm run start` or `node server.js`.
 
-8.  To start MailHog, enter these commands in your terminal: `~/go/bin/MailHog`
+8.  To start MailHog, enter these commands in your terminal: `~/go/bin/MailHog` or `MailHog`
 
 9. Open a web browser and go to http://localhost:3000.
 
@@ -91,7 +91,7 @@ That's it! You should now be able to use Mailman to send emails locally using th
 
 #
 
-<img src="./public/images/readme.webp" alt="Alt-Text" width="600" height="400">
+<img src="./public/lib/images/readme.webp" alt="Alt-Text" width="600" height="400">
 
 
 # Credits

@@ -2,7 +2,6 @@ import express from 'express';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 import { promises as fs } from 'fs';
-
 dotenv.config({ path: './config/config.env' });
 
 const APP = express();
@@ -11,11 +10,22 @@ const PORT = process.env.SERVER_PORT || 3000;
 const SMTP_PORT = process.env.SMTP_PORT || 1025; // Update the default SMTP port
 
 APP.use(express.static('public'));
+APP.use(express.json());
 
 APP.post('/send-email', async (req, res) => {
-    try {
-        const emailContent = await fs.readFile('public/email_template.html', 'utf8');
+    let templatePath;
 
+    try {
+        if (req.body.template === 'cleverreach') {
+            templatePath = './public/cleverreach_template/cleverreach_template.html';
+        } else if (req.body.template === 'qualtrics') {
+            templatePath = './public/qualtrics_template/qualtrics_template.html';
+        } else {
+            throw new Error('Ungültiger Template-Name');
+        }
+
+        const emailContent = await fs.readFile(templatePath, 'utf8');
+        
         const transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST, // Update the SMTP host
             port: SMTP_PORT,
@@ -25,7 +35,7 @@ APP.post('/send-email', async (req, res) => {
 
         const mailOptions = {
             from: process.env.MAIL_FROM,
-            to: process.env.MAIL_TO.split(','), 
+            to: process.env.MAIL_TO.split(','),
             // cc: process.env.MAIL_CC.split(','), 
             subject: process.env.MAIL_SUBJECT,
             html: emailContent,
@@ -42,6 +52,7 @@ APP.post('/send-email', async (req, res) => {
 });
 
 APP.listen(PORT, IP, () => console.log(`http://${IP}:${PORT}`));
+
 
 
 
