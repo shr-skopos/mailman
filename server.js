@@ -16,16 +16,14 @@ APP.post('/send-email', async (req, res) => {
     let templatePath;
 
     try {
-        if (req.body.template === 'cleverreach') {
-            templatePath = './public/cleverreach_template/cleverreach_template.html';
-        } else if (req.body.template === 'qualtrics') {
-            templatePath = './public/qualtrics_template/qualtrics_template.html';
+
+        if (req.body.template) {
+            templatePath = './public/' + req.body.id + '/' + req.body.template + '.html';
         } else {
             throw new Error('Ungültiger Template-Name');
         }
 
         const emailContent = await fs.readFile(templatePath, 'utf8');
-        
         const transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST, // Update the SMTP host
             port: SMTP_PORT,
