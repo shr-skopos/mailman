@@ -2,7 +2,7 @@ import express from 'express';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 import { promises as fs } from 'fs';
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: './public/lib/config/config.env' });
 
 const APP = express();
 const IP = '127.0.0.1';
